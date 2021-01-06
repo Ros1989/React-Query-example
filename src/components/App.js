@@ -1,7 +1,26 @@
-import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import { BookList } from './BookList';
+import { CreateBook } from './CreateBook';
+import UpdateBook from './UpdateBook';
+import { NavBar } from './shared/NavBar';
 
-const App = () => {
-  return <div></div>;
-};
+function App() {
+  return (
+    <>
+      <NavBar />
+      <Switch>
+        <Route path="/update-book/id">
+          <UpdateBook />
+        </Route>
+        <Route path="/create-book">
+          <CreateBook />
+        </Route>
+        <Route path="/">
+          <BookList />
+        </Route>
+      </Switch>
+    </>
+  );
+}
 
 export default App;
